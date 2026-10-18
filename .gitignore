@@ -13,3 +13,4 @@ zig-out/
 .vs/
 .vscode/
 *.log
+/tools/

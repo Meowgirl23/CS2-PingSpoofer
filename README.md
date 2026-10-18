@@ -52,26 +52,7 @@ fakelatency.dll
 & .\build.ps1
 ```
 
-## 4. 构建独立注入器（可选）
-
-在仓库根目录执行：
-
-```powershell
-& $Zig cc -target x86_64-windows-gnu -std=c11 -O2 -s -municode .\tools\injector.c -lkernel32 -o .\fakelatency-injector.exe
-if ($LASTEXITCODE -ne 0) { throw '注入器构建失败' }
-```
-
-输出文件为 `fakelatency-injector.exe`，不内嵌 DLL，也不依赖旧版托管注入核心。
-
-将它与 `fakelatency.dll` 放在同一目录，可以先进行只读文件检查：
-
-```powershell
-.\fakelatency-injector.exe --check
-```
-
-该参数只检查旁边的 DLL 文件是否为 x64 DLL，不会打开游戏进程或执行注入，也不代表游戏运行兼容性已验证。
-
-## 5. 运行本地测试
+## 4. 运行本地测试
 
 在仓库根目录执行：
 
@@ -104,7 +85,6 @@ PASS 6401; real_game_tested=false
 | `src/fakelatency.cpp` | DLL 初始化、网络处理和控制指令 |
 | `src/logic.h` | 指令解析和 ACK 字段处理 |
 | `build.ps1` | DLL 构建脚本 |
-| `tools/injector.c` | 独立注入器源码 |
 | `tests` | 本地测试及模拟模块 |
 | `third_party/minhook` | MinHook 依赖及其许可证 |
 
