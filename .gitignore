@@ -1,0 +1,15 @@
+/build/
+/tests/bin/
+*.dll
+*.exe
+*.o
+*.obj
+*.pdb
+*.lib
+*.exp
+*.ilk
+.zig-cache/
+zig-out/
+.vs/
+.vscode/
+*.log
