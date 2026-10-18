@@ -1,4 +1,22 @@
-# 构建教程
+# CS2-PingSpoofer
+
+## 使用方法
+
+从 [Releases](https://github.com/Meowgirl23/CS2-PingSpoofer/releases/latest) 下载 `fakelatency.dll`。
+
+成功注入后，打开 CS2 开发者控制台，按需输入以下指令：
+
+| 指令 | 功能 |
+| --- | --- |
+| `fake_latency 0` | 开启零 Ping 处理 |
+| `fake_latency disable` | 关闭处理，恢复原本的延迟统计 |
+| `fake_latency unload` | 关闭处理并卸载 DLL |
+
+加载后默认关闭，需要先输入 `fake_latency 0`。以上指令均无额外文字反馈；卸载后再次使用需要重新注入。
+
+修改的是延迟统计，不会降低真实网络延迟；服务器及其他玩家看到的数值仍需实测。
+
+## 构建教程
 
 ## 环境要求
 
